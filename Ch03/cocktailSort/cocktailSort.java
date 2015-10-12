@@ -52,7 +52,8 @@ class ArrayCocktail
                    swapped=true;
                } 
            }
-           display();
+           //System.out.println("Sorting large values to right: "+"("+upperBound+")");
+           //display();
            if(!swapped)
                break;
 
@@ -65,8 +66,8 @@ class ArrayCocktail
                    swapped = true;
                }
            }
-           System.out.println(lowerBound+" "+upperBound);
-           display();
+           //System.out.println("Sorting small values to left: "+"("+lowerBound+")");
+           //display();
            upperBound--;
            lowerBound++;
        }while(swapped);
