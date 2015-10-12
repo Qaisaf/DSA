@@ -44,7 +44,7 @@ class ArrayCocktail
        do
        {
            swapped=false;
-           for(int i = 0; i<upperBound; i++)
+           for(int i = lowerBound; i<upperBound; i++)
            {
                if(a[i]>a[i+1])
                {
@@ -52,12 +52,12 @@ class ArrayCocktail
                    swapped=true;
                } 
            }
-           
+           display();
            if(!swapped)
                break;
 
            swapped = false;
-           for(int i = nElems-2; i>=lowerBound; i--)
+           for(int i = upperBound-1; i>=lowerBound; i--)
            {
                if(a[i]>a[i+1])
                {
@@ -65,7 +65,8 @@ class ArrayCocktail
                    swapped = true;
                }
            }
-
+           System.out.println(lowerBound+" "+upperBound);
+           display();
            upperBound--;
            lowerBound++;
        }while(swapped);
