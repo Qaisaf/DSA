@@ -56,7 +56,7 @@ class Queue
       return nItems;
       }
 //--------------------------------------------------------------
-   @Override //output Queue contents to string
+   /*@Override //output Queue contents to string
    public String toString()
    {
        StringBuilder output = new StringBuilder();
@@ -72,6 +72,27 @@ class Queue
            while(!this.isEmpty())
            {
                output.append(this.remove()).append(NEW_LINE);
+           }
+       }
+       
+       return output.toString();
+   }*/
+   
+   public String display()
+   {
+       StringBuilder output = new StringBuilder();
+       String NEW_LINE = System.getProperty("line.separator");
+       String EMPTY = "No items in queue";
+       
+       if(this.isEmpty())
+       {
+           output.append(EMPTY);
+       }
+       else
+       {
+           for(int i = 0; i<nItems; i++)
+           {
+               output.append(queArray[(front+i)%maxSize]).append(NEW_LINE);
            }
        }
        
@@ -99,7 +120,11 @@ class QueueApp
       theQueue.insert(70);
       theQueue.insert(80);
       
-      System.out.println(theQueue);
+      //System.out.println(theQueue);
+      System.out.println("Displaying items:");
+      System.out.println(theQueue.display());
+      System.out.println("Displaying items again to show they were not removed:");
+      System.out.println(theQueue.display());
 
       /*while( !theQueue.isEmpty() )    // remove and display
          {                            //    all items
