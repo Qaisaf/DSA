@@ -99,13 +99,13 @@ class PriorityQueueApp
    public static void main(String[] args)
       {
       PriorityQueue pQueue = new PriorityQueue();
-      System.out.println("Inserting two values...");
+      System.out.println("Inserting two values... (20) (40) ");
       pQueue.insert(20);                 // insert items
       pQueue.insert(40);
 
       pQueue.displayQueue();             // display queue
       
-      System.out.println("Inserting two more values...");
+      System.out.println("Inserting two more values... (60) (80) ");
       pQueue.insert(60);                 // insert items
       pQueue.insert(80);
 
@@ -116,6 +116,12 @@ class PriorityQueueApp
       pQueue.remove();
 
       pQueue.displayQueue();             // display queue
+      
+      System.out.println("Inserting two values... (30) (10)");
+      pQueue.insert(30);
+      pQueue.insert(10);
+      
+      pQueue.displayQueue();
       }  // end main()
    }  // end class LinkQueueApp
 ////////////////////////////////////////////////////////////////
