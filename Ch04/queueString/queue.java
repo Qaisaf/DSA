@@ -99,6 +99,47 @@ class Queue
        return output.toString();
    }
    }  // end class Queue
+
+class QueueTwo
+{
+    private int maxSize;
+    private long[] queArray;
+    private int front;
+    private int rear;
+    
+    public QueueTwo(int s)
+    {
+        maxSize = s+1;
+        queArray = new long[maxSize];
+        front = 0;
+        rear = -1;
+    }
+    
+    public void insert(long j)
+    {
+        if(rear==maxSize-1)
+            rear = -1;
+        queArray[++rear]=j;
+    }
+    
+    public long remove()
+    {
+        long temp = queArray[front++];
+        if(front==maxSize)
+            front = 0;
+        return temp;
+    }
+    
+    public long peek()
+    {
+        return queArray[front];
+    }
+    
+    public boolean isEmpty()
+    {
+        return (rear+1==front || (front+maxSize-2==rear));
+    }
+}
 ////////////////////////////////////////////////////////////////
 class QueueApp
    {
@@ -125,6 +166,31 @@ class QueueApp
       System.out.println(theQueue.display());
       System.out.println("Displaying items again to show they were not removed:");
       System.out.println(theQueue.display());
+      
+      QueueTwo qq = new QueueTwo(5);
+      System.out.println(qq.isEmpty());
+      qq.insert(10);
+      qq.insert(20);
+      qq.insert(30);
+      qq.insert(40);
+      qq.insert(50);
+      
+      qq.remove();
+      qq.remove();
+      qq.remove();
+      System.out.println(qq.isEmpty());
+      qq.insert(60);
+      qq.insert(70);
+      qq.insert(80);
+      
+      System.out.println(qq.isEmpty());
+      
+      for(int i = 0; i<5; i++)
+      {
+          qq.remove();
+      }
+      
+      System.out.println(qq.isEmpty());
 
       /*while( !theQueue.isEmpty() )    // remove and display
          {                            //    all items
