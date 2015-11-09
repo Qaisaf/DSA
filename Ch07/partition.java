@@ -30,10 +30,11 @@ class ArrayPar
       System.out.println("");
       }
 //--------------------------------------------------------------
-    public int partitionIt(int left, int right, long pivot)
+    public int partitionIt(int left, int right)
        {
        int leftPtr = left - 1;           // right of first elem
        int rightPtr = right + 1;         // left of pivot
+       long pivot = pivot();
        while(true)
           {
           while(leftPtr < right &&       // find bigger item
@@ -97,7 +98,7 @@ class PartitionApp
       System.out.print("Pivot is " + pivot);
       int size = arr.size();
                                     // partition array
-      int partDex = arr.partitionIt(0, size-1, pivot);
+      int partDex = arr.partitionIt(0, size-1);
 
       System.out.println(", Partition is at index " + partDex);
       arr.display();                // display partitioned array
@@ -121,7 +122,7 @@ class PartitionApp
       System.out.print("Pivot is "+pivot);
       
       size = arr2.size();
-      partDex = arr2.partitionIt(0, size-1, pivot);
+      partDex = arr2.partitionIt(0, size-1);
       
       System.out.println(", Partition is at index "+partDex);
       arr2.display();
@@ -146,7 +147,7 @@ class PartitionApp
       System.out.print("Pivot is "+pivot);
       
       size = arr3.size();
-      partDex = arr3.partitionIt(0, size-1, pivot);
+      partDex = arr3.partitionIt(0, size-1);
       
       System.out.println(", Partition is at index "+partDex);
       arr3.display();
@@ -170,7 +171,7 @@ class PartitionApp
       System.out.print("Pivot is "+pivot);
       
       size = arr4.size();
-      partDex = arr4.partitionIt(0, size-1, pivot);
+      partDex = arr4.partitionIt(0, size-1);
       
       System.out.println(", Partition is at index "+partDex);
       arr4.display();
